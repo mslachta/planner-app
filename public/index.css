@@ -1,0 +1,80 @@
+#root {
+  font-family: "Open Sans", sans-serif;
+  padding: 30px;
+}
+
+nav > a {
+  color: #000000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  margin-right: 30.5px;
+  text-decoration-line: none;
+}
+
+nav > a.active {
+  text-decoration-line: underline;
+}
+
+nav {
+  border-bottom: 1px solid #979797;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+h2 {
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 18px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #979797;
+  margin: 20px 0;
+}
+
+input[type="submit"] {
+  background: #03a8d8;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  outline: none;
+  padding: 10px 0;
+  width: 100%;
+}
+
+input,
+select {
+  background: #ffffff;
+  border: 1px solid #979797;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 10px;
+  outline: none;
+  padding: 7px 9.5px 9px 9.5px;
+  width: 100%;
+}
+
+.tile {
+  font-size: 14px;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.tile.tile-title {
+  font-weight: bold;
+}
+
+.tile-container {
+  margin-bottom: 20px;
+}
