@@ -7,42 +7,42 @@ export const ContactForm = ({
   setPhone,
   email,
   setEmail,
-  handleSubmit,
+  handleSubmit
 }) => {
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Enter Name:</label>
-      <input
+      <label htmlFor='username'>enter Name:</label>
+      <input 
         value={name}
-        type="text"
+        type='text'
         name="name"
         id="username"
-        onChange={({ target }) => setName(target.value)}
-        placeholder="name"
+        onChange={({target}) => setName(target.value)}
+        placeholder='name'
         required
       />
-      <label htmlFor="phone">Enter your Phone Number:</label>
-      <input
+      <label htmlFor='phone'>enter your Phone Number:</label>
+      <input 
         value={phone}
-        type="tel"
+        type='tel'
         name="phone"
         id="phone"
-        onChange={({ target }) => setPhone(target.value)}
-        placeholder="000-000000"
+        onChange={({target}) => setPhone(target.value)}
+        placeholder='000-000000'
         pattern="[0-9]{3}-[0-9]{6}"
         required
       />
-      <label htmlFor="email">Enter your Email:</label>
-      <input
+      <label htmlFor='email'>enter your Email:</label>
+      <input 
         value={email}
-        type="email"
+        type='email'
         name="email"
         id="email"
-        onChange={({ target }) => setEmail(target.value)}
-        placeholder="email@"
+        onChange={({target}) => setEmail(target.value)}
+        placeholder='email@'
         required
       />
-      <input type="submit" value="Add Contact" />
+      <input type='submit' value='Add Contact'/>
     </form>
   );
 };

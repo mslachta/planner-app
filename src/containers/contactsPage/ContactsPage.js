@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import { ContactForm } from "../../components/contactForm/ContactForm";
-import { TileList } from "../../components/tileList/TileList";
+import { ContactForm } from '../../components/contactForm/ContactForm';
+import { TileList } from '../../components/tileList/TileList';
 
-export const ContactsPage = ({ contacts, addContact }) => {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
+export const ContactsPage = ({contacts, addContact}) => {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [duplicate, setDuplicate] = useState(false);
 
   const handleSubmit = (e) => {
@@ -14,20 +14,19 @@ export const ContactsPage = ({ contacts, addContact }) => {
 
     if (duplicate !== undefined) {
       addContact(name, phone, email);
-      setName("");
-      setPhone("");
-      setEmail("");
+      setName('');
+      setPhone('');
+      setEmail('');
     }
   };
 
-  useEffect(() => {
-    const nameDuplicate = () => {
-      const isDuplicate = contacts.find((contact) => contact.name === name);
+  useEffect( () => {
+    const nameDuplicate = () => {   
+      const isDuplicate = contacts.find(contact => contact.name === name);
       if (!isDuplicate) {
         return true;
       }
       return false;
-
     };
 
     if (nameDuplicate()) {
@@ -43,21 +42,18 @@ export const ContactsPage = ({ contacts, addContact }) => {
         <h2>
           Add Contact
           {!duplicate ? " - Name already exists, please change it" : ""}
-        </h2>
-        <ContactForm
-          name={name}
-          setName={setName}
-          phone={phone}
-          setPhone={setPhone}
-          email={email}
-          setEmail={setEmail}
+        </h2> 
+        <ContactForm 
+          name={name} setName={setName}
+          phone={phone} setPhone={setPhone}
+          email={email} setEmail={setEmail}
           handleSubmit={handleSubmit}
         />
       </section>
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList tiles={contacts} />
+        <TileList tiles={contacts}/>
       </section>
     </div>
   );

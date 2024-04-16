@@ -1,5 +1,5 @@
 import React from "react";
-import { ContactPicker } from "../contactPicker/ContactPicker";
+import {ContactPicker} from '../contactPicker/ContactPicker';
 
 export const AppointmentForm = ({
   contacts,
@@ -11,7 +11,7 @@ export const AppointmentForm = ({
   setDate,
   hour,
   setHour,
-  handleSubmit,
+  handleSubmit
 }) => {
   const getTodayString = () => {
     const [month, day, year] = new Date()
@@ -20,49 +20,49 @@ export const AppointmentForm = ({
     return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
   };
 
-  const getContactNames = () => {
+  const getContactNames = () => { 
     return contacts.map((contact) => contact.name);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="title">Enter a Title for the appointment:</label>
-      <input
+      <label htmlFor='title'>enter a Title for the appointment:</label>
+      <input 
         value={title}
-        type="text"
+        type='text'
         name="title"
         id="title"
-        onChange={({ target }) => setTitle(target.value)}
-        placeholder="title"
+        onChange={({target}) => setTitle(target.value)}
+        placeholder='title'
         required
       />
-      <label htmlFor="date">Select a Date for the appointment:</label>
-      <input
+      <label htmlFor='date'>select a Date for the appointment:</label>
+      <input 
         value={date}
-        type="date"
+        type='date'
         name="date"
         id="date"
-        onChange={({ target }) => setDate(target.value)}
+        onChange={({target}) => setDate(target.value)}
         htmlmin={getTodayString()}
         required
       />
-      <label htmlFor="hour">Select an Hour for the appointment:</label>
-      <input
+      <label htmlFor='hour'>select an Hour for the appointment:</label>
+      <input 
         value={hour}
-        type="time"
+        type='time'
         name="hour"
         id="hour"
-        onChange={({ target }) => setHour(target.value)}
+        onChange={({target}) => setHour(target.value)}
         required
       />
       <label htmlFor="contact">Choose a contact:</label>
-      <ContactPicker
-        name="contact"
-        onChange={({ target }) => setContact(target.value)}
+      <ContactPicker 
+        name='contact'
+        onChange={({target}) => setContact(target.value)}
         contacts={getContactNames()}
         value={contact}
       />
-      <input type="submit" value="Add Appointment" />
+      <input type='submit' value='Add Appointment' />
     </form>
   );
 };
